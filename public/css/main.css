@@ -1,0 +1,67 @@
+body {
+  text-shadow: 0 1px #000;
+}
+
+main {
+  margin-bottom: 80px;
+}
+
+::selection {
+  background-color: #272b2e;
+  color: #c8c8c8;
+}
+
+ul.ulTopMenu > li {
+  margin-top: 20px;
+}
+
+ul > li > a {
+  font-size: 15px;
+  font-weight: bold;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+div.well > ul > li > a {
+  font-size: 10px;
+}
+
+aside {
+  position: fixed;
+  left: 10px;
+  height: 78%;
+  padding: 20px;
+}
+
+header,
+section {
+  margin-left: 240px;
+  margin-right: 20px;
+}
+
+td > a {
+  margin: 10px 5px 5px 5px;
+}
+
+nav {
+  box-shadow: 0 0 10px #c8c8c8;
+}
+
+footer {
+  position:fixed;
+  bottom: 0px;
+  left: 0px;
+  background-image: -webkit-linear-gradient(#484e55, #3a3f44 60%, #313539);
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.breadcrumb{
+  font-size: 13px;
+  line-height: 5px;
+  padding-bottom: 20px;
+}
