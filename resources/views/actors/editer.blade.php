@@ -12,6 +12,8 @@
 
     <h1 class="text-center">Editer un acteur</h1>
 
+    
+
   </section>
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Models\Categories;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 /**
  * Classe MoviesController
@@ -30,6 +31,22 @@ class CategoriesController extends Controller
   {
     // Intéroge ma bdd avec le model
     return view('categories/creer');
+  }
+
+  /**
+   * Enregistre mes données depuis mon formulaire d'ajout d'une catégorie
+   * réception des données de mon formulaire une fois envoyé
+   * [store]
+   * @return [type] [description]
+   */
+  public function store(Request $request){
+
+    // Appel de mon modele Directors de sa méthode store
+    Categories::storeData($request);
+
+    // redirection vers la page jeux
+    return redirect()->route('categories.index');
+
   }
 
   /**

@@ -50,7 +50,7 @@
 
 
         <a class="list-group-item collapse" role="button" data-toggle="collapse" href="#collapseAjoutDirectors" aria-expanded="false" aria-controls="collapseAjoutDirectors">
-          <i class="fa fa-plus"></i> gérer les directeurs
+          <i class="fa fa-plus"></i> Gérer les directeurs
         </a>
         <div class="collapse" id="collapseAjoutDirectors">
           <div class="well">

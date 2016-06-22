@@ -14,7 +14,7 @@
     <h1 class="text-center">Liste de mes catégories</h1>
 
     <table class="table table-striped table-bordered table-hover table-responsive text-center">
-      <caption class="text-center">Listing complet des mes acteurs inscrits en base de données BDD</caption>
+      <caption class="text-center">Listing complet des mes acteurs inscrits en base de données BDD  - <small><a href="{{ route('categories.creer' )}}" class="pull-right btn btn-primary"><i class="fa fa-plus-circle"> Ajouter une catégorie</i></a></small></caption>
       <thead>
         <tr>
           <th>Id</th>

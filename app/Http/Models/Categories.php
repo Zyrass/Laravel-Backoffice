@@ -2,6 +2,7 @@
 namespace App\Http\Models;
 
 use illuminate\Database\Eloquent\Model;
+use illuminate\Http\Request;
 use DB;
 
 /**

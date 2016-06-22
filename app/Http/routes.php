@@ -63,6 +63,8 @@ Route::get('/ils-parlent-de-nous', ['as' => 'presse',  function () {
       'uses' => 'MoviesController@index'
     ]);
 
+    // ======================================================== CREER / STORE MOVIE
+
     Route::get('/creer', [
       'as' => 'movies.creer',
       'uses' => 'MoviesController@creer'
@@ -72,6 +74,8 @@ Route::get('/ils-parlent-de-nous', ['as' => 'presse',  function () {
       'as' => 'movies.store',
       'uses' => 'MoviesController@store'
     ]);
+
+    // ======================================================== FIN CREER / STORE MOVIE
 
     Route::get('/editer', [
       'as' => 'movies.editer',
@@ -93,10 +97,20 @@ Route::get('/ils-parlent-de-nous', ['as' => 'presse',  function () {
       'as' => 'categories.index',
       'uses' => 'CategoriesController@index'
     ]);
+
+    // ======================================================== CREER / STORE CATEGORIES
+
     Route::get('/creer', [
       'as' => 'categories.creer',
       'uses' => 'CategoriesController@creer'
     ]);
+
+    Route::post('/store', [
+      'as' => 'categories.store',
+      'uses' => 'CategoriesController@store'
+    ]);
+    // ======================================================== FIN CREER / STORE CATEGORIES
+
     Route::get('/editer', [
       'as' => 'categories.editer',
       'uses' => 'CategoriesController@editer'
@@ -117,10 +131,21 @@ Route::get('/ils-parlent-de-nous', ['as' => 'presse',  function () {
       'as' => 'actors.index',
       'uses' => 'ActorsController@index'
     ]);
+
+    // ======================================================== CREER / STORE ACTORS
+
     Route::get('/creer', [
       'as' => 'actors.creer',
       'uses' => 'ActorsController@creer'
     ]);
+
+    Route::post('/store', [
+      'as' => 'actors.store',
+      'uses' => 'ActorsController@store'
+    ]);
+
+    // ======================================================== FIN CREER / STORE ACTORS
+
     Route::get('/editer', [
       'as' => 'actors.editer',
       'uses' => 'ActorsController@editer'
@@ -141,10 +166,21 @@ Route::get('/ils-parlent-de-nous', ['as' => 'presse',  function () {
       'as' => 'directors.index',
       'uses' => 'DirectorsController@index'
     ]);
+
+    // ======================================================== CREER / STORE REALISATEUR
+
     Route::get('/creer', [
       'as' => 'directors.creer',
       'uses' => 'DirectorsController@creer'
     ]);
+
+    Route::post('/store', [
+      'as' => 'directors.store',
+      'uses' => 'DirectorsController@store'
+    ]);
+
+    // ======================================================== FIN CREER / STORE REALISATEUR
+
     Route::get('/editer', [
       'as' => 'directors.editer',
       'uses' => 'DirectorsController@editer'

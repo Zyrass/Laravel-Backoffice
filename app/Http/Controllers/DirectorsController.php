@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Models\Directors;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 /**
  * Classe MoviesController
@@ -32,6 +33,22 @@ class DirectorsController extends Controller
   {
     // Intéroge ma bdd avec le model
     return view('directors/creer');
+  }
+
+  /**
+   * Enregistre mes données depuis mon formulaire d'ajout d'un réalisateur
+   * réception des données de mon formulaire une fois envoyé
+   * [store]
+   * @return [type] [description]
+   */
+  public function store(Request $request){
+
+    // Appel de mon modele Movies de sa méthode store
+    Directors::storeData($request);
+
+    // redirection vers la page jeux
+    return redirect()->route('directors.index');
+
   }
 
   /**
