@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Models\Movies;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 /**
  * Classe MoviesController
@@ -30,6 +31,25 @@ class MoviesController extends Controller
   {
     // Intéroge ma bdd avec le model
     return view('movies/creer');
+  }
+
+  /**
+   * Enregistre mes données depuis mon formulaire d'ajout de film
+   * réception des données de mon formulaire une fois envoyé
+   * [store]
+   * @return [type] [description]
+   */
+  public function store(Request $request){
+
+    // Appel de mon modele Movies de sa méthode store
+    Movies::storeData($request);
+
+    // redirection vers la page jeux
+    return redirect()->route('movies.index');
+
+    // dump($request->title,
+    //     $request->synopsis); // debogue toutes mes données envoyé en POST
+    // exit(); // arrete le script
   }
 
   /**

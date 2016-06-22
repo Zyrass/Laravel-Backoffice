@@ -68,6 +68,11 @@ Route::get('/ils-parlent-de-nous', ['as' => 'presse',  function () {
       'uses' => 'MoviesController@creer'
     ]);
 
+    Route::post('/store', [
+      'as' => 'movies.store',
+      'uses' => 'MoviesController@store'
+    ]);
+
     Route::get('/editer', [
       'as' => 'movies.editer',
       'uses' => 'MoviesController@editer'

@@ -2,6 +2,7 @@
 namespace App\Http\Models;
 
 use illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use DB;
 
 /**
@@ -25,6 +26,30 @@ class Movies extends Model
 
     return $result;
   }
+
+  /**
+   * Methode qui enregistre en BDD mon film
+   * @return [type] [description]
+   */
+  public static function storeData(Request $request){
+
+    // Insert permet d'insérer un table
+    DB::table('movies')->insert(
+      [
+        'title' => $request->title,
+        'synopsis' => $request->synopsis,
+        'description' => $request->description,
+        'date_release' => $request->dateRelease,
+        'languages' => $request->languages,
+        'budget' => $request->budget,
+        'bo' => $request->bo,
+        'image' => $request->image
+      ]
+    );
+
+  }
+
+
 }
 
 ?>

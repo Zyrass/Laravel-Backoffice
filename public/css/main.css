@@ -47,6 +47,11 @@ nav {
   box-shadow: 0 0 10px #c8c8c8;
 }
 
+th, td {
+  text-align: center;
+  vertical-align: middle;
+}
+
 footer {
   position:fixed;
   bottom: 0px;
@@ -64,4 +69,8 @@ footer {
   font-size: 13px;
   line-height: 5px;
   padding-bottom: 20px;
+}
+
+#divFormAjout {
+  margin-bottom: 70px;
 }

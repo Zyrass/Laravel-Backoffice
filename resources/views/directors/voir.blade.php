@@ -10,8 +10,6 @@
       <li class="active">Vous êtes là</li>
     </ol>
 
-    <hr />
-
     <h1 class="text-center">Voir le réalisateur</h1>
 
   </section>
