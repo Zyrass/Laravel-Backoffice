@@ -58,22 +58,43 @@
 
             <fieldset class="form-group">
               @if(!$errors->has('bo'))
-              <label for="bo">BO</label>
-              <select class="form-control" id="bo" name="bo">
-                <option value="VF">VF</option>
-                <option value="VO">VO</option>
-                <option value="VOSTFR">VOSTFR</option>
-                <option value="VOST">VOST</option>
-                <option value="JAP">JAP</option>
-              </select>
+                <label for="bo">BO</label>
+                <select class="form-control" id="bo" name="bo">
+                  <option value="VF">VF</option>
+                  <option value="VO">VO</option>
+                  <option value="VOSTFR">VOSTFR</option>
+                  <option value="VOST">VOST</option>
+                  <option value="JAP">JAP</option>
+                </select>
+              @elseif($errors->has('image'))
+                <div class="form-group has-error has-feedback">
+                  <label for="bo" class="text-danger">BO</label>
+                  <select class="form-control" id="bo" name="bo">
+                    <option value="VF">VF</option>
+                    <option value="VO">VO</option>
+                    <option value="VOSTFR">VOSTFR</option>
+                    <option value="VOST">VOST</option>
+                    <option value="JAP">JAP</option>
+                  </select>
+                  <span id="helpBlock3" class="help-block">{{ $errors->first("bo") }}</span>
+                </div>
               @endif
             </fieldset>
           </div>
 
           <div class="col-lg-6">
             <fieldset class="form-group">
-              <label for="description">Description</label>
-              <textarea class="form-control" id="description" name="description" rows="4" placeholder="Veuillez indiquez une petite description du film ici..."></textarea>
+              @if(!$errors->has('synopsis'))
+                <label for="synopsis">Synopsis</label>
+                <textarea class="form-control" id="synopsis" name="synopsis" rows="5" placeholder="Veuillez indiquez le synopsis du film ici..."></textarea>
+              @elseif($errors->has('synopsis'))
+                <div class="form-group has-error has-feedback">
+                  <label for="synopsis" class="text-danger">Synopsis</label>
+                  <textarea class="form-control" id="synopsis" name="synopsis" rows="5" placeholder="Veuillez indiquez le synopsis du film ici..."></textarea>
+                  <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                  <span id="helpBlock4" class="help-block">{{ $errors->first("synopsis") }}</span>
+                </div>
+              @endif
             </fieldset>
 
             <fieldset>
@@ -96,11 +117,10 @@
             </fieldset>
           </div>
 
-
           <div class="col-lg-12">
             <fieldset class="form-group">
-              <label for="synopsis">Synopsis</label>
-              <textarea class="form-control" id="synopsis" name="synopsis" rows="5" placeholder="Veuillez indiquez le synopsis du film ici..."></textarea>
+              <label for="description">Description</label>
+              <textarea class="form-control" id="description" name="description" rows="4" placeholder="Veuillez indiquez une petite description du film ici..."></textarea>
             </fieldset>
           </div>
 
