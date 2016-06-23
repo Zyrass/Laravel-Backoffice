@@ -6,7 +6,7 @@
 
     <ol class="breadcrumb text-right">
       <li><a href="{{ route('categories.index') }}">Catégorie</a></li>
-      <li><a href="{{ route('categories.creer') }}">Créer</a></li>
+      <li><a href="{{ route('categories.creer') }}">Ajouter</a></li>
       <li class="active">Vous êtes là</li>
     </ol>
 
@@ -37,9 +37,9 @@
           </fieldset>
         </div>
 
-        <div class="col-lg-offset-4 col-lg-4">
+        <div class="col-lg-offset-2 col-lg-8">
           <fieldset class="form-group">
-            <button type="submit" name="submit" class="btn btn-primary btn-block">Envoyer votre enregistrement</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-block">Envoyer votre nouvelle catégorie</button>
           </fieldset>
         </div>
 

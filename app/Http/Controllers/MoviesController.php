@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Models\Movies;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Validator;
 
 /**
  * Classe MoviesController
@@ -41,16 +42,42 @@ class MoviesController extends Controller
    */
   public function store(Request $request){
 
+    $validator = Validator::make($request->all(), [
+      'title' => 'required|min:10|max:255|unique:movies,title',
+      'image' => 'required|url',
+      'description' => 'required|min:10|max:255',
+      'bo' => 'required|in:VF,VO,VOSTFR,VOST,JAP',
+      'languages' => 'required|in:FR,EN,JAP,CHN',
+      'synopsis' => 'required|min:10|max:255',
+      'dateRelease' => 'required|date_format:d/m/Y|after:now',
+      'budget' => 'required|integer|between:10000,10000000000',
+      'duree' => 'required|integer|between:1,5',
+    ]);
+
+      // Si le validator échoue
+      if ($validator->fails()) {
+        // redirection
+        return redirect()->route('movies.creer')
+                         ->withErrors($validator) // message d'erreur
+                         ->withInput(); // remplissage de nos champs formulaire
+      }
+
+
     // Appel de mon modele Movies de sa méthode store
     Movies::storeData($request);
 
     // redirection vers la page jeux
-    return redirect()->route('movies.index');
+    return redirect()
+      ->route('movies.index')
+      ->with('success', 'Votre film a bien été ajouté');
+      // with() permet d'écrire un message flash validant l'envoie
 
     // dump($request->title,
     //     $request->synopsis); // debogue toutes mes données envoyé en POST
     // exit(); // arrete le script
   }
+
+
 
   /**
    * Pages edition d'un film

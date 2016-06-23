@@ -61,10 +61,10 @@
                 <img src="{{ asset('img/flag/Flag_of_Belgium.svg.png') }}" class="img-responsive" width="100px" height="50%"/>
               @elseif ($actors->nationality === "Brazil")
                 <img src="{{ asset('img/flag/Flag_of_Brazil.svg.png') }}" class="img-responsive" width="100px" height="50%"/>
-              @elseif ($actors->nationality === "Chinois")
+              @elseif ($actors->nationality === "Chine")
                 <img src="{{ asset('img/flag/Flag_of_China.svg.png') }}" class="img-responsive" width="100px" height="50%"/>
-              @elseif ($actors->nationality === "Anglais")
-                <img src="{{ asset('img/flag/Flag_of_England.svg.png') }}" class="img-responsive" width="100px" height="50%"/>
+              @elseif ($actors->nationality === "Royaume-Uni")
+                <img src="{{ asset('img/flag/Flag_of_the_United_Kingdom.svg.png') }}" class="img-responsive" width="100px" height="50%"/>
               @elseif ($actors->nationality === "Allemand")
                 <img src="{{ asset('img/flag/Flag_of_Germany.svg.png') }}" class="img-responsive" width="100px" height="50%"/>
               @elseif ($actors->nationality === "Qatar")
@@ -75,9 +75,14 @@
                 <img src="{{ asset('img/flag/Flag_of_Spain.svg.png') }}" class="img-responsive" width="100px" height="50%"/>
               @elseif ($actors->nationality === "Turquie")
                 <img src="{{ asset('img/flag/Flag_of_Turquey.svg.png') }}" class="img-responsive" width="100px" height="50%"/>
-
-              @else
-                ?
+              @elseif ($actors->nationality === "Nouvelle-Zélande")
+                <img src="{{ asset('img/flag/Flag_of_New_Zealand.svg.png') }}" class="img-responsive" width="100px" height="50%"/>
+              @elseif ($actors->nationality === "Hong-Kong")
+                <img src="{{ asset('img/flag/Flag_of_Hong_Kong.svg.png') }}" class="img-responsive" width="100px" height="50%"/>
+              @elseif ($actors->nationality === "Austriche")
+                <img src="{{ asset('img/flag/Flag_of_Austria.svg.png') }}" class="img-responsive" width="100px" height="50%"/>
+              @elseif ($actors->nationality === "Australie")
+                <img src="{{ asset('img/flag/Flag_of_Australia.svg.png') }}" class="img-responsive" width="100px" height="50%"/>
             @endif
           </td>
           <td>{{ $actors->recompenses }}</td>

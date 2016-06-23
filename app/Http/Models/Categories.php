@@ -27,6 +27,23 @@ class Categories extends Model
     return $result;
   }
 
+  /**
+   * Methode qui enregistre en BDD mon nouveau Réalisateur
+   * @return [type] [description]
+   */
+   public static function storeData(Request $request){
+
+     // Insert permet d'insérer un table
+     DB::table('categories')->insert(
+       [
+         'title' => $request->title,
+         'description' => $request->description,
+         'slug' => $request->slug,
+       ]
+     );
+
+   }
+
 }
 
  ?>

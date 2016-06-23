@@ -6,7 +6,7 @@
 
     <ol class="breadcrumb text-right">
       <li><a href="{{ route('actors.index') }}">Acteurs</a></li>
-      <li><a href="{{ route('actors.creer') }}">Créer</a></li>
+      <li><a href="{{ route('actors.creer') }}">Ajouter</a></li>
       <li class="active">Vous êtes là</li>
     </ol>
 
@@ -89,7 +89,7 @@
 
         <div class="col-lg-offset-4 col-lg-4">
           <fieldset class="form-group">
-            <button type="submit" name="submit" class="btn btn-primary btn-block">Envoyer votre enregistrement</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-block">Envoyer votre nouvel acteur</button>
           </fieldset>
         </div>
 

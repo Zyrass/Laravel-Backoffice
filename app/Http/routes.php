@@ -43,6 +43,16 @@ Route::get('/ils-parlent-de-nous', ['as' => 'presse',  function () {
     return view('presse');
 }]);
 
+Route::get('/cinema', ['as' => 'cinema', function () {
+    return view('cinema');
+}]);
+
+Route::get('/serie', ['as' => 'serie', function () {
+    return view('series');
+}]);
+
+
+
 // ========================================================================
 //                                GROUP MOVIE
 // ========================================================================
@@ -192,5 +202,69 @@ Route::get('/ils-parlent-de-nous', ['as' => 'presse',  function () {
   });
 
   // ========================================================================
-  //
+  //                                GROUP CINEMA
   // ========================================================================
+  Route::group(['prefix' => 'cinemas'], function () {
+
+    Route::get('/index', [
+      'as' => 'cinemas.index',
+      'uses' => 'CinemasController@index'
+    ]);
+
+    // ======================================================== CREER / STORE CINEMA
+
+    Route::get('/creer', [
+      'as' => 'cinemas.creer',
+      'uses' => 'CinemasController@creer'
+    ]);
+
+    Route::post('/store', [
+      'as' => 'cinemas.store',
+      'uses' => 'CinemasController@store'
+    ]);
+
+    // ======================================================== FIN CREER / STORE CINEMA
+
+    Route::get('/editer', [
+      'as' => 'cinemas.editer',
+      'uses' => 'CinemasController@editer'
+    ]);
+    Route::get('/voir', [
+      'as' => 'cinemas.voir',
+      'uses' => 'CinemasController@voir'
+    ]);
+  });
+
+  // ========================================================================
+  //                                GROUP SERIE
+  // ========================================================================
+  Route::group(['prefix' => 'series'], function () {
+
+    Route::get('/index', [
+      'as' => 'series.index',
+      'uses' => 'SeriesController@index'
+    ]);
+
+    // ======================================================== CREER / STORE CINEMA
+
+    Route::get('/creer', [
+      'as' => 'series.creer',
+      'uses' => 'SeriesController@creer'
+    ]);
+
+    Route::post('/store', [
+      'as' => 'series.store',
+      'uses' => 'SeriesController@store'
+    ]);
+
+    // ======================================================== FIN CREER / STORE CINEMA
+
+    Route::get('/editer', [
+      'as' => 'series.editer',
+      'uses' => 'SeriesController@editer'
+    ]);
+    Route::get('/voir', [
+      'as' => 'series.voir',
+      'uses' => 'SeriesController@voir'
+    ]);
+  });

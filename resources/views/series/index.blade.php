@@ -11,12 +11,6 @@
 
     <h1 class="text-center">Liste de mes films</h1>
 
-    @if (session('success'))
-      <div class="alert alert-success">
-        {{ session('success') }}
-      </div>
-    @endif
-
     <table class="table table-striped table-bordered table-hover table-responsive">
       <caption>Listing complet de mes films enregistré en base de donnée (BDD)  - <small><a href="{{ route('movies.creer' )}}" class="pull-right btn btn-primary"><i class="fa fa-plus-circle"> Ajouter un film</i></a></small></caption>
       <thead>
