@@ -87,14 +87,50 @@ Route::get('/serie', ['as' => 'serie', function () {
 
     // ======================================================== FIN CREER / STORE MOVIE
 
-    Route::get('/editer', [
+    Route::get('/editer}', [
       'as' => 'movies.editer',
       'uses' => 'MoviesController@editer'
     ]);
 
+
+
     Route::get('/voir', [
       'as' => 'movies.voir',
       'uses' => 'MoviesController@voir'
+    ]);
+
+    /**
+     * Action Like
+     * Envoie de 2 arguments en URL
+     * id : id du film envoyer en URL
+     * action: like ou dislike
+     * Ex en PHP : ?id=123
+     * Ex sur laravel /123
+     * Resultat: /like/6/aime
+     */
+    Route::get('/aimer-film/{id}/{action}', [
+      'as' => 'movies.aimer',
+      'uses' => 'MoviesController@like'
+    ]);
+
+    Route::get('/visible-ou-pas/{id}/{visibilite}', [
+      'as' => 'movies.visible',
+      'uses' => 'MoviesController@visible'
+    ]);
+
+    Route::get('/mettre-en-avant/{id}/{mettreEnAvant}', [
+      'as' => 'movies.cover',
+      'uses' => 'MoviesController@cover'
+    ]);
+
+    Route::get('/suppression/{id}', [
+      'as' => 'movies.delete',
+      'uses' => 'MoviesController@delete'
+    ]);
+
+    Route::get('/search', [
+      'as' => 'movies.search',
+      'uses' => 'MoviesController@search'
     ]);
 
 });
@@ -130,6 +166,11 @@ Route::get('/serie', ['as' => 'serie', function () {
       'uses' => 'CategoriesController@voir'
     ]);
 
+    Route::get('/suppression/{id}', [
+      'as' => 'categories.delete',
+      'uses' => 'CategoriesController@delete'
+    ]);
+
   });
 
   // ========================================================================
@@ -163,6 +204,11 @@ Route::get('/serie', ['as' => 'serie', function () {
     Route::get('/voir', [
       'as' => 'actors.voir',
       'uses' => 'ActorsController@voir'
+    ]);
+
+    Route::get('/suppression/{id}', [
+      'as' => 'actors.delete',
+      'uses' => 'ActorsController@delete' // METHODE DU CONTROLLER ICI
     ]);
 
   });

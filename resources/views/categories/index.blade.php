@@ -22,6 +22,7 @@
           <th>Description</th>
           <th>Genre</th>
           <th>Nombre de film</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -87,6 +88,12 @@
           </td>
           <td>
             Je ne sais pas compter
+          </td>
+          <td>
+            <a href="#" class="btn btn-xs btn-primary"><span class="fa fa-search">Voir</span></a>
+            <a href="{{ route('categories.editer', ['id' => $categories->id]) }}" class="btn btn-xs btn-warning"><span class="fa fa-edit">Editer</span></a>
+
+            <a href="{{ route('categories.delete', ['id' => $categories->id]) }}" onclick="return confirm('Etes-vous sûre de vouloir supprimer cette catégorie ?')" class="btn btn-xs btn-danger"><span class="fa fa-close">Supprimer</span></a>
           </td>
 
         @endforeach

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Models\Actors;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Validator;
 
 /**
  * Classe MoviesController
@@ -68,7 +69,19 @@ class ActorsController extends Controller
     // Intéroge ma bdd avec le model
     return view('actors/voir');
   }
+
+  public function delete($id)
+  {
+    Actors::deleteSetActorsId($id);
+
+    return redirect()
+      ->route('actors.index')
+      ->with('success', "Votre acteur à bien été effacé de la base de donnée");
+  }
+
+
 }
+
 
 
 

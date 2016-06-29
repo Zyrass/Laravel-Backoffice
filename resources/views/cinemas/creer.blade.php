@@ -15,7 +15,7 @@
     <form action="{{ route('cinemas.store') }}" method="POST">
       {{ csrf_field() }}
 
-      <div class="well col-lg-offset-2 col-lg-8" id="divFormAjout">
+      <div class="well col-lg-12" id="divFormAjout">
         <h2 class="text-center text-primary">Formulaire d'ajout d'un nouveau cinéma</h2>
         <hr />
         <div class="col-lg-6">

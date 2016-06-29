@@ -11,6 +11,8 @@
 
     <h1 class="text-center">Liste de mes acteurs</h1>
 
+
+
     <table class="table table-striped table-bordered table-hover table-responsive text-center">
       <caption class="text-center">Listing complet des mes acteurs inscrits en base de données BDD - <small><a href="{{ route('categories.creer' )}}" class="pull-right btn btn-primary"><i class="fa fa-plus-circle"> Ajouter un acteur</i></a></small></caption>
       <thead>
@@ -23,6 +25,7 @@
           <th>Date de naissance</th>
           <th>Nationalité</th>
           <th>Récompenses</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -33,7 +36,7 @@
           <td><a href="#">{{ $actors->id }}</a></td>
           <td><img src="{{ $actors->image }}" class="img-responsive img-thumbnail" width="100px" height="50%"/></td>
           <td><h4><a>{{ $actors->firstname }}</a></h4></td>
-          <td><h4><a>{{ $actors->lastname }}</a></h4></td>
+          <td><h4><a>{{ $actorindexs->lastname }}</a></h4></td>
           <td>
               @if ($actors->sex === "m")
                 <img src="{{ asset('img/divers/symbole_homme.png') }}" class="img-responsive" width="50px" height="50%"/>
@@ -86,6 +89,12 @@
             @endif
           </td>
           <td>{{ $actors->recompenses }}</td>
+          <td>
+            <a href="#" class="btn btn-xs btn-primary"><span class="fa fa-search">Voir</span></a>
+            <a href="{{ route('actors.editer', ['id' => $actors->id]) }}" class="btn btn-xs btn-warning"><span class="fa fa-edit">Editer</span></a>
+
+            <a href="{{ route('actors.delete', ['id' => $actors->id]) }}" onclick="return confirm('Etes-vous sûre de vouloir supprimer cette acteur ?')" class="btn btn-xs btn-danger"><span class="fa fa-close">Supprimer</span></a>
+          </td>
 
         @endforeach
 

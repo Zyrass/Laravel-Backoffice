@@ -31,47 +31,39 @@
 
             <fieldset class="form-group">
               <label for="image">Affiche</label>
-              <input type="text" class="form-control" id="image" name="image" placeholder="http://">
+              <input type="text" class="form-control" id="image" name="image" placeholder="http(s)://(www.) avec comme extenssion : (.jpeg|.png|.jpg)">
             </fieldset>
 
-            <fieldset class="form-group">
-              <label for="bo">BO</label>
-              <select class="form-control" id="bo" name="bo">
-                <option>VF</option>
-                <option>VO</option>
-                <option>VOSTFR</option>
-                <option>VOST</option>
-                <option>JAP</option>
-              </select>
-            </fieldset>
           </div>
 
           <div class="col-lg-6">
             <fieldset class="form-group">
-              <label for="description">Description</label>
-              <textarea class="form-control" id="description" name="description" rows="4" placeholder="Veuillez indiquez une petite description du film ici..."></textarea>
+              <label for="nbseasons">Nombre de saison</label>
+              <select class="form-control" id="nbseasons" name="nbseasons">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+              </select>
             </fieldset>
 
-            <fieldset>
-              <label for="languages">Langue de la série</label>
-              <br />
-              <div class="well">
-                <label class="radio-inline">
-                  <input type="radio" name="languages" id="inlineRadio1" value="option1"> Français
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="languages" id="inlineRadio2" value="option2"> Anglais
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="languages" id="inlineRadio3" value="option3"> Japonais
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="languages" id="inlineRadio4" value="option4"> Chinois
-                </label>
-              </div>
+            <fieldset class="form-group">
+              <label for="nbepisodes">Nombre d'épisode(s) toutes saisons confondu</label>
+              <input type="text" class="form-control" id="nbepisodes" name="nbepisodes" placeholder="Ex : 240">
             </fieldset>
           </div>
-
 
           <div class="col-lg-12">
             <fieldset class="form-group">
@@ -80,32 +72,33 @@
             </fieldset>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-6">
             <fieldset class="form-group">
-              <label for="dateRelease">Date de sortie de la série</label>
-              <input type="text" class="form-control" id="dateRelease" name="dateRelease" placeholder="dd/mm/YYYY">
+              <label for="anneerelease">Année de sortie de la série</label>
+              <input type="text" class="form-control" id="anneerelease" name="anneerelease" placeholder="YYYY">
             </fieldset>
           </div>
 
-          <div class="col-lg-4">
-            <fieldset class="form-group">
-              <label for="nbseason">Nombre de saison</label>
-              <input type="text" class="form-control" id="nbseason" name="nbseason" placeholder="€">
-            </fieldset>
-          </div>
-
-          <div class="col-lg-4">
+          <div class="col-lg-6">
             <fieldset class="form-group">
               <label for="duree">Durée de la serie</label>
-              <input type="text" class="form-control" id="duree" name="duree" placeholder="En nombre d'heures">
+              <input type="text" class="form-control" id="duree" name="duree" placeholder="xx:xx:xx / xx:xx / xxHxxMIN / xxHxxMINxxSEC">
+            </fieldset>
+          </div>
+
+          <div class="col-lg-12">
+            <fieldset class="form-group">
+              <label for="status">Status</label>
+              <select class="form-control" id="status" name="status">
+                <option value="prod">En production</option>
+                <option value="stop">Arrêté</option>
+              </select>
             </fieldset>
           </div>
 
           <button type="submit" class="btn btn-primary btn-block">Envoyer votre nouvelle série</button>
 
         </form>
-
-      </div>
 
     </div>
 

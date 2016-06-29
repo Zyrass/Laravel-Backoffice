@@ -6,6 +6,7 @@ use App\Http\Models\Cinemas;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+
 /**
  * Classe CinemasController
  */

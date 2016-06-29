@@ -43,12 +43,55 @@ class Movies extends Model
         'languages' => $request->languages,
         'budget' => $request->budget,
         'bo' => $request->bo,
-        'image' => $request->image
+        'image' => $request->image,
       ]
     );
+  }
+
+  public static function updateSetVisible($id, $visible){
+
+    // Insert permet d'insérer dans une table
+    return DB::table('movies')
+      ->where('id', $id)
+      ->update(['visible' => $visible]);
+  }
+
+  public static function updateSetCover($id, $cover) {
+
+    return DB::table('movies')
+      ->where('id', $id)
+      ->update(['cover' => $cover]);
+  }
+
+  public static function deleteSetId($id) {
+
+    return DB::table('movies')
+      ->where('id', $id)
+      ->delete(['id' => $id]);
+  }
+
+  public static function search($word = ""){
+
+    $resultat = DB::table('movies')
+              ->where('title', 'like', '%'.$word.'%')
+              ->orwhere('synopsis', 'like', '%'.$word.'%')
+              ->orwhere('languages', 'like', '%'.$word.'%')
+              ->orwhere('visible', 'like', '%'.$word.'%')
+              ->orwhere('budget', 'like', '%'.$word.'%')
+              ->orwhere('note_presse', 'like', '%'.$word.'%')
+              ->get();
+
+              return $resultat;
 
   }
 
+
+  // public static function updateSetMovie($id, $editer) {
+  //
+  //   return DB::table('movies')
+  //     ->where('id', $id)
+  //     ->update(['id' => $editer]);
+  // }
 
 }
 

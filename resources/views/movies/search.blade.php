@@ -6,31 +6,11 @@
 
     <ol class="breadcrumb text-right">
       <li><a href="{{ route('movies.index') }}">Movies</a></li>
+      <li><a href="{{ route('movies.search') }}">Rechercher</a></li>
       <li class="active">Vous êtes là</li>
     </ol>
 
-    <h1 class="text-center">Liste de mes films</h1>
-
-    <div class="row">
-      <div class="form-group">
-        <form action="{{ route('movies.search') }}" method="get">
-          <div class="col-md-6">
-            <input type="text" class="form-control col-md-6" name="search" placeholder="titre, mot..." />
-          </div>
-          <div class="col-md-6">
-            <button type="submit" class="btn btn-success btn-block">
-              <span class="fa fa-search"></span> Rechercher
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    @if (session('success'))
-      <div class="alert alert-success">
-        {{ session('success') }}
-      </div>
-    @endif
+    <h1 class="text-center">Résultat de recherche</h1>
 
     <table class="table table-striped table-bordered table-hover table-responsive">
       <caption>Listing complet de mes films enregistré en base de donnée (BDD)  - <small><a href="{{ route('movies.creer' )}}" class="pull-right btn btn-primary"><i class="fa fa-plus-circle"> Ajouter un film</i></a></small></caption>

@@ -49,6 +49,12 @@ class Actors extends Model
 
   }
 
+  public static function deleteSetActorsId($id) {
+    return DB::table('actors')
+      ->where('id', $id)
+      ->delete();
+  }
+
 
 
 }

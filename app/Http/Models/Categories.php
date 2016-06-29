@@ -44,6 +44,12 @@ class Categories extends Model
 
    }
 
+   public static function deleteSetCategoriesId($id) {
+     return DB::table('categories')
+      ->where('id', $id)
+      ->delete(['id' => $id]);
+   }
+
 }
 
  ?>

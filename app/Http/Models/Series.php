@@ -37,13 +37,13 @@ class Series extends Model
     DB::table('series')->insert(
       [
         'title' => $request->title,
+        'nbseasons' => $request->nbseasons,
+        'nbepisodes' => $request->nbepisodes,
+        'image' => $request->image,
         'synopsis' => $request->synopsis,
-        'description' => $request->description,
-        'date_release' => $request->dateRelease,
-        'languages' => $request->languages,
-        'budget' => $request->budget,
-        'bo' => $request->bo,
-        'image' => $request->image
+        'duree' => $request->duree,
+        'anneerelease' => $request->anneerelease,
+        'status' => $request->status
       ]
     );
 
