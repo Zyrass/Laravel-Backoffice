@@ -99,10 +99,13 @@
         <i class="fa fa-search"></i> Recherche avancer
       </a>
       <hr />
-      <a class="list-group-item" href="#">
-        <i class="fa fa-lock"></i> Se connecter
+      <a class="list-group-item" href=" {{ url('/logout')}}">
+        ---- Se déconnecter ----
       </a>
       <hr />
+
+      <p> Bonjour : {{ Auth::user()->name }}</p>
+      <p> Votre email : {{ Auth::user()->email }}</p>
 
 
 

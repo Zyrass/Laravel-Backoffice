@@ -7,6 +7,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     /**
+     * Connexion avec la table administrators
+     * @var string
+     */
+    protected $table = "administrators";
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

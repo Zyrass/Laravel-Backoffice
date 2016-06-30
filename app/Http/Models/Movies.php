@@ -31,7 +31,7 @@ class Movies extends Model
    * Methode qui enregistre en BDD mon film
    * @return [type] [description]
    */
-  public static function storeData(Request $request){
+  public static function storeData(Request $request, $filename){
 
     // Insert permet d'insérer un table
     DB::table('movies')->insert(
@@ -43,7 +43,7 @@ class Movies extends Model
         'languages' => $request->languages,
         'budget' => $request->budget,
         'bo' => $request->bo,
-        'image' => $request->image,
+        'image' => asset('uploads/movies/'.$filename), // asset() permet de générer une url a partir du dossier public
       ]
     );
   }

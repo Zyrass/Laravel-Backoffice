@@ -15,6 +15,9 @@ Route::get('/', ['as' => 'welcome', function () {
     return view('welcome');
 }]);
 
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+
 // Route::get permet de créer une route en GET
 // Le premier paramètre, c'est l'URI (url interne)
 // le second paramètre est une fonction anonyme
@@ -314,3 +317,8 @@ Route::get('/serie', ['as' => 'serie', function () {
       'uses' => 'SeriesController@voir'
     ]);
   });
+
+});
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

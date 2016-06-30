@@ -31,7 +31,7 @@ class Actors extends Model
    * Methode qui enregistre en BDD mon film
    * @return [type] [description]
    */
-  public static function storeData(Request $request){
+  public static function storeData(Request $request, $filename){
 
     // Insert permet d'insérer un table
     DB::table('actors')->insert(
@@ -40,7 +40,7 @@ class Actors extends Model
         'lastname' => $request->lastname,
         'sex' => $request->sex,
         'dob' => $request->dob,
-        'image' => $request->image,
+        'image' => asset('uploads/actors/'.$filename),
         'nationality' => $request->nationality,
         'biography' => $request->biography,
         'recompenses' => $request->note

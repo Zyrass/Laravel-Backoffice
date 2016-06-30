@@ -12,7 +12,7 @@
 
     <h1 class="text-center">Ajout d'un acteur en base de donnée</h1>
 
-    <form action="{{ route('actors.store') }}" method="POST">
+    <form action="{{ route('actors.store') }}" method="POST" enctype="multipart/form-data">
       {{ csrf_field() }}
 
       <div class="well col-lg-12" id="divFormAjout">
@@ -32,8 +32,8 @@
           <fieldset class="form-group">
             <label for="sex">Sexe | <span class="text-info">m</span> = Masculin &amp; <span class="text-danger">f</span> = Féminin</label>
             <select class="form-control" id="sex" name="sex">
-              <option>m</option>
-              <option>f</option>
+              <option value="m">m</option>
+              <option value="f">f</option>
             </select>
           </fieldset>
 
@@ -45,20 +45,20 @@
           <fieldset class="form-group">
             <label for="nationality">Nationalité</label>
             <select class="form-control" id="nationality" name="nationality">
-              <option>Algérie</option>
-              <option>Allemand</option>
-              <option>Anglais</option>
-              <option>Argentine</option>
-              <option>Autriche</option>
-              <option>Belgique</option>
-              <option>Brazil</option>
-              <option>Chinois</option>
-              <option>Espagne</option>
-              <option>Etats-Unis</option>
-              <option>France</option>
-              <option>Japon</option>
-              <option>Qatar</option>
-              <option>Turquie</option>
+              <option value="ALG">Algérie</option>
+              <option value="ALL">Allemand</option>
+              <option value="ENG">Anglais</option>
+              <option value="ARG">Argentine</option>
+              <option value="AUS">Autriche</option>
+              <option value="BE">Belgique</option>
+              <option value="BRE">Brazil</option>
+              <option value="CHN">Chinois</option>
+              <option value="ESP">Espagne</option>
+              <option value="USA">Etats-Unis</option>
+              <option value="FR">France</option>
+              <option value="JAP">Japon</option>
+              <option value="QAT">Qatar</option>
+              <option value="TUR">Turquie</option>
             </select>
           </fieldset>
         </div>
@@ -66,7 +66,7 @@
         <div class="col-lg-6">
           <fieldset class="form-group">
             <label for="image">Portrait de l'acteur</label>
-            <input type="text" class="form-control" id="image" name="image" placeholder="Saisissez l'url du portrait de l'acteur au format jpg">
+            <input type="file" class="form-control" id="image" name="image">
           </fieldset>
 
           <fieldset class="form-group">
@@ -77,12 +77,12 @@
           <fieldset class="form-group">
             <label for="note">Note de l'acteur</label>
             <select class="form-control" id="note" name="note">
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
           </fieldset>
         </div>

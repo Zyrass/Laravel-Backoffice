@@ -23,7 +23,7 @@
       <div class="well">
         <h2 class="text-center text-primary">Formulaire d'ajout d'un nouveau Film</h2>
 
-        <form action="{{ route('movies.store' )}}" method="POST">
+        <form action="{{ route('movies.store' )}}" method="POST" enctype="multipart/form-data">
 
         {{ csrf_field() }}
 
@@ -71,11 +71,11 @@
             <fieldset class="form-group">
               @if(!$errors->has('image'))
               <label for="image">Affiche du film</label>
-              <input type="text" class="form-control" id="image" name="image" placeholder="http://">
+              <input type="file" class="form-control" id="image" name="image" accept="image/*">
               @elseif($errors->has('image'))
                 <div class="form-group has-error has-feedback">
                   <label for="image" class="text-danger">Affiche du film</label>
-                  <input type="text" class="form-control" id="image" name="image" placeholder="http://">
+                  <input type="file" class="form-control" id="image" name="image">
                   <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                   <span id="helpBlock3" class="help-block">{{ $errors->first("image") }}</span>
                 </div>

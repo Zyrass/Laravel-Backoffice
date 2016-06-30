@@ -45,7 +45,7 @@ class MoviesController extends Controller
 
     $validator = Validator::make($request->all(), [
       'title' => 'required|min:10|max:255|unique:movies,title',
-      'image' => 'required|url',//|regex:^http(s)?:\/\/.+(.jpg|.jpeg|.png)$',
+      'image' => 'required|image',//|regex:^http(s)?:\/\/.+(.jpg|.jpeg|.png)$',
       'description' => 'required|min:10|max:255',
       'bo' => 'required|in:VF,VO,VOSTFR,VOST,JAP',
       'languages' => 'required|in:FR,EN,JAP,CHN',
@@ -61,7 +61,7 @@ class MoviesController extends Controller
       'title.unique' => "Arf, ce film existe déjà...",
 
       'image.required' => "Désolé ce champ est obligatoire",
-      'image.url' => "Désolé, vous devez saisir une url valide",
+      'image.image' => "Vous devez sélectionner une image valide",
       //'image.regex' => "Vous ne respectez pas le format requis. Format accepté : .jpg ; .jpeg ; .png",
 
       'description.required' => 'Désolé ce champ est requis',
@@ -102,9 +102,28 @@ class MoviesController extends Controller
                          ->withInput(); // remplissage de nos champs formulaire
       }
 
+      $filename = ''; // fichier vide
+        if ($request->hasfile('image')) {
+          // si dans ma requete il y a un fichier dont le name dans l'input est "image"
+          $file = $request->file('image');
+          // je recupere le fichier image
 
-    // Appel de mon modele Movies de sa méthode store
-    Movies::storeData($request);
+          $filename = $file->getClientOriginalName();
+          // récupère le nom original du fichier
+
+          // public path == chemin public
+          $destinationPath = public_path().'/uploads/movies'; // Indique ou stocker l'image
+
+          $file->move($destinationPath, $filename);
+          // Déplace le fichier vers ma destination choisi
+
+        }
+
+
+
+
+    // Appel de mon modele Movies de sa méthode store je suis lui envoi mon objet $request et mon objet $filename
+    Movies::storeData($request, $filename);
 
     // redirection vers la page jeux
     return redirect()
@@ -217,7 +236,7 @@ class MoviesController extends Controller
 
     return view('movies/search',
     ['movies' => $moviessearch]); // Le transporteur permet de transporter des données du controller à la vue
-    // La clef du transporteur c'est le nom de la variable 
+    // La clef du transporteur c'est le nom de la variable
 
   }
 
