@@ -20,7 +20,7 @@
           <th class="column-title">Nb - Saison</th>
           <th class="column-title">Synopsis</th>
           <th class="column-title">Nb - d'épisodes</th>
-          <th class="column-title">Durée total</th>
+          {{-- <th class="column-title">Durée total</th> --}}
           <th class="column-title">Année</th>
           <th class="column-title">Status</th>
         </tr>
@@ -32,13 +32,15 @@
           <td><img src="{{ $series->image }}" class="img-responsive img-thumbnail" width="100px" height="50%" /></td>
           <td><h4><a>{{ $series->title }}</a></h4></td>
           <td><p>{{ $series->nbseasons }}</p></td>
-          <td style="word-break: break-all"><i>{{ strip_tags($series->synopsis) }}</i></td>
+          <td style="word-break: break-all"><i><?php echo strip_tags(str_limit($series->synopsis, 100)); ?></i></td>
           <td><p>{{ $series->nbepisodes }}</p></td>
-          <td><p>{{ $series->duree }}</p></td>
+          {{-- <td><p>{{ $series->duree }}</p></td> --}}
           <td><p>{{ $series->anneerelease }}</p></td>
           <td>
             @if ($series->status == "prod")
               <p class="label label-success">{{ $series->status }}</p>
+            @elseif($series->status == "acheve")
+              <p class="label label-default">{{ $series->status }}</p>
             @else
               <p class="label label-danger">{{ $series->status }}</p>
             @endif

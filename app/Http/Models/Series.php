@@ -41,9 +41,9 @@ class Series extends Model
         'nbepisodes' => $request->nbepisodes,
         'image' => $request->image,
         'synopsis' => $request->synopsis,
-        'duree' => $request->duree,
         'anneerelease' => $request->anneerelease,
         'status' => $request->status
+        // 'duree' => $request->duree,
       ]
     );
 

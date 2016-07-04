@@ -79,18 +79,19 @@
             </fieldset>
           </div>
 
-          <div class="col-lg-6">
+          {{-- <div class="col-lg-6">
             <fieldset class="form-group">
               <label for="duree">Durée de la serie</label>
               <input type="text" class="form-control" id="duree" name="duree" placeholder="xx:xx:xx / xx:xx / xxHxxMIN / xxHxxMINxxSEC">
             </fieldset>
-          </div>
+          </div> --}}
 
-          <div class="col-lg-12">
+          <div class="col-lg-6">
             <fieldset class="form-group">
               <label for="status">Status</label>
               <select class="form-control" id="status" name="status">
                 <option value="prod">En production</option>
+                <option value="acheve">Achevé</option>
                 <option value="stop">Arrêté</option>
               </select>
             </fieldset>

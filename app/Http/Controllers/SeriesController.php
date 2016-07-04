@@ -44,7 +44,7 @@ class SeriesController extends Controller
     // Appel de mon modele Movies de sa méthode store
     Series::storeData($request);
 
-    // redirection vers la page jeux
+    // redirection vers la page index
     return redirect()->route('series.index');
 
   }

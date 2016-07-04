@@ -10,7 +10,11 @@
       <li class="active">Vous êtes là</li>
     </ol>
 
-    <h1 class="text-center">Voir la Série</h1>
+    <h1 class="text-center">Voir la série</h1>
+
+    <div class="col-md-12 well">
+
+    </div>
 
   </section>
 
